@@ -1,0 +1,16 @@
+[
+    {
+        "matchItems":
+            [
+                "ultramarine:bronze_block"
+            ],
+        "resultItems": "alloyed:bronze_block"
+    },
+    {
+        "matchItems":
+            [
+                "ultramarine:bronze_ingot"
+            ],
+        "resultItems": "alloyed:bronze_ingot"
+    }
+]
