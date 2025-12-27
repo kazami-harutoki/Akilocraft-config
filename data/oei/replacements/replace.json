@@ -92,5 +92,12 @@
                 "kaleidoscope_cookery:flour"
             ],
         "resultItems": "create:wheat_flour"
+    },
+    {
+        "matchItems":
+            [
+                "kaleidoscope_cookery:chopping_board"
+            ],
+        "resultItems": "farmersdelight:cutting_board"
     }
 ]
