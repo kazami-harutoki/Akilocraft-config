@@ -4,17 +4,17 @@
 //本文件放在server_scripts文件夹里
 console.info('Hello, World! (Loaded server scripts)')
 
-const OEI_Replacements=
-[
-    {
-        //菜板
-        "matchItems":
-            [
-                "kaleidoscope_cookery:chopping_board"
-            ],
-        "resultItems": "farmersdelight:cutting_board"
-    }
-]
+// const OEI_Replacements=
+// [
+//     {
+//         //菜板
+//         "matchItems":
+//             [
+//                 "kaleidoscope_cookery:chopping_board"
+//             ],
+//         "resultItems": "farmersdelight:cutting_board"
+//     }
+// ]
 
 //注意，OEI使用json文件，不再使用kubejs
 //此处仅为方便调试使用
@@ -58,7 +58,11 @@ ServerEvents.recipes(event =>{
         {id:"kaleidoscope_cookery:chopping_board/cooked_pork_belly"},
         {id:"kaleidoscope_cookery:chopping_board/sashimi_from_tropical_fish"},
         {id:"kaleidoscope_cookery:chopping_board/sashimi_from_cod"},
-        {id:"kaleidoscope_cookery:chopping_board/sashimi_from_salmon"}
+        {id:"kaleidoscope_cookery:chopping_board/sashimi_from_salmon"},
+        {id:"powergrid:cutting/copper_wire_cutting"},
+        {id:"powergrid:cutting/gold_wire_cutting"},//powergrid金线
+        {id:"powergrid:cutting/iron_wire_cutting"},//powergrid铁线
+        {id:"powergrid:cutting/copper_wire_cutting"}//powergrid铜线
     ]);
 
     //移除原版牛杂配方,刀切牛肉同时获得森罗物语.牛杂和农夫乐事.牛肉饼
@@ -119,32 +123,6 @@ ServerEvents.recipes(event =>{
     // (切石机)青色染色玻璃板->眼睛.科技眼镜
     event.stonecutting('glasses:glasses_9','minecraft:cyan_stained_glass_pane');
 
-    //(工作台)纸+铁板+3x铁棒->永无止境音乐会.谱架
-    event.shaped(Item.of('ywzj_midi:music_stand_block',1),
-    [
-        ' p ',
-        ' i ',
-        'mmm'
-    ],
-    {
-        p:'minecraft:paper',
-        i:'create:iron_sheet',
-        m:'createaddition:iron_rod'
-    });
-    //(工作台)8x青铜板+线->永无止境音乐会.镲
-    event.shaped(
-        Item.of('ywzj_midi:cymbal',1),
-        [
-            'bbb',
-            'bsb',
-            'bbb'
-        ],
-        {
-            b:'alloyed:bronze_sheet',
-            s:'minecraft:string'
-        }
-    )
-
     //(洗涤)皮革->毛发
     create.splashing(['ultramarine:fur',Item.of('ultramarine:fur').withChance(0.5)],'minecraft:leather');
 
@@ -171,7 +149,8 @@ ServerEvents.recipes(event =>{
     create.mixing('ultramarine:raw_hematite',[Fluid.of('minecraft:water',100),'minecraft:iron_ingot']).heated();
     //(加热动力搅拌器)炭+群青.粗赤铁->粗铁
     create.mixing(Item.of('minecraft:raw_iron',3),['#minecraft:coals',Item.of('ultramarine:raw_hematite',3)]).heated();
-    
+
+    {//群青冶炼
     //(熔炉)[深层]菱美矿->白松石
     event.smelting('ultramarine:magnesite','ultramarine:magnesite_ore').xp(0.2)
     event.smelting('ultramarine:magnesite','ultramarine:deepslate_magnesite_ore').xp(0.2)
@@ -185,7 +164,7 @@ ServerEvents.recipes(event =>{
     event.smelting('ultramarine:raw_hematite','ultramarine:deepslate_hematite_ore').xp(0.7)
     //(熔炉)机械动力.纸浆->群青.宣纸
     event.smelting('ultramarine:xuan_paper','create:pulp')
-    
+    }
     {//永无止境音乐会
         //(动力合成)木板+木棍+群青.毛发->音乐会.小提琴弓
         create.mechanical_crafting('ywzj_midi:violin_bow_item',[
@@ -283,5 +262,32 @@ ServerEvents.recipes(event =>{
             i:'createaddition:iron_wire',
             p:'minecraft:spruce_planks'
         });
+        //(工作台)纸+铁板+3x铁棒->永无止境音乐会.谱架
+        event.shaped(Item.of('ywzj_midi:music_stand_block',1),
+        [
+            ' p ',
+            ' i ',
+            'mmm'
+        ],
+        {
+            p:'minecraft:paper',
+            i:'create:iron_sheet',
+            m:'createaddition:iron_rod'
+        });
+        //(工作台)8x青铜板+线->永无止境音乐会.镲
+        event.shaped(
+            Item.of('ywzj_midi:cymbal',1),
+            [
+                'bbb',
+                'bsb',
+                'bbb'
+            ],
+            {
+                b:'alloyed:bronze_sheet',
+                s:'minecraft:string'
+        });
+    }
+    {
+
     }
 });

@@ -99,5 +99,33 @@
                 "kaleidoscope_cookery:chopping_board"
             ],
         "resultItems": "farmersdelight:cutting_board"
+    },
+        {
+        "matchItems":
+            [
+                "kaleidoscope_cookery:chopping_board"
+            ],
+        "resultItems": "farmersdelight:cutting_board"
+    },
+    {
+        "matchItems":
+            [
+                "createaddition:gold_wire"
+            ],
+        "resultItems": "powergrid:golden_wire"
+    },
+    {
+        "matchItems":
+            [
+                "createaddition:iron_wire"
+            ],
+        "resultItems": "powergrid:iron_wire"
+    },
+    {
+        "matchItems":
+            [
+                "createaddition:copper_wire"
+            ],
+        "resultItems": "powergrid:wire"
     }
 ]
