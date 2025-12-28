@@ -62,7 +62,9 @@ ServerEvents.recipes(event =>{
         {id:"powergrid:cutting/copper_wire_cutting"},
         {id:"powergrid:cutting/gold_wire_cutting"},//powergrid金线
         {id:"powergrid:cutting/iron_wire_cutting"},//powergrid铁线
-        {id:"powergrid:cutting/copper_wire_cutting"}//powergrid铜线
+        {id:"powergrid:cutting/copper_wire_cutting"},//powergrid铜线
+        {id:"jpp:ccb"},//JP混凝土障碍
+        {id:"jpp:bp"}//JP盆栽盆
     ]);
 
     //移除原版牛杂配方,刀切牛肉同时获得森罗物语.牛杂和农夫乐事.牛肉饼
@@ -150,6 +152,111 @@ ServerEvents.recipes(event =>{
     //(加热动力搅拌器)炭+群青.粗赤铁->粗铁
     create.mixing(Item.of('minecraft:raw_iron',3),['#minecraft:coals',Item.of('ultramarine:raw_hematite',3)]).heated();
 
+    {//JP
+    //(工作台)铁锭+6x混凝土粉->混凝土障碍
+    event.shaped(
+        Item.of('jpp:concretebarrier'),
+        [
+            'i i',
+            'ppp',
+            'ppp'
+        ],
+        {
+            i:'minecraft:iron_ingot',
+            p:['minecraft:lime_concrete_powder','minecraft:white_concrete_powder','minecraft:light_gray_concrete_powder','minecraft:gray_concrete_powder','minecraft:black_concrete_powder','minecraft:brown_concrete_powder','minecraft:red_concrete_powder','minecraft:orange_concrete_powder','minecraft:yellow_concrete_powder','minecraft:green_concrete_powder','minecraft:cyan_concrete_powder','minecraft:light_blue_concrete_powder','minecraft:blue_concrete_powder','minecraft:purple_concrete_powder','minecraft:magenta_concrete_powder','minecraft:pink_concrete_powder']
+        }
+    );
+    //(工作台)竹子+花盆+树苗+石头->盆栽盆
+    event.shaped(
+        Item.of('jpp:bonsaipot'),
+        [
+            'bp ',
+            'f  ',
+            's  '
+        ],
+        {
+            b:'minecraft:bamboo',
+            p:'#minecraft:saplings',
+            f:'minecraft:flower_pot',
+            s:'minecraft:stone'
+        }
+    );
+    //(工作台)3x铁棒->JP铁杆各种形态
+    event.shaped(
+        Item.of('jpp:polecurve'),
+        [
+            'ii ',
+            'i  ',
+            '   '
+        ],
+        {
+            i:'createaddition:iron_rod'
+        }
+    );
+    event.shaped(
+        Item.of('jpp:polehorizontal'),
+        [
+            '   ',
+            'iii',
+            '   '
+        ],
+        {
+            i:'createaddition:iron_rod'
+        }
+    );
+    event.shaped(
+        Item.of('jpp:polevertical'),
+        [
+            ' i ',
+            ' i ',
+            ' i '
+        ],
+        {
+            i:'createaddition:iron_rod'
+        }
+    );
+    //(工作台)地毯+木板+木板->暖桌
+    event.shaped(
+        Item.of('jpp:kotatsutable'),
+        [
+            'wsw',
+            'p p',
+            'p p'
+        ],
+        {
+            w:'#minecraft:wool_carpets',
+            s:'#minecraft:wooden_slabs',
+            p:'#minecraft:planks'
+
+        }
+    );
+    //(工作台)地毯+木板+木板->坐垫
+    event.shaped(
+        Item.of('jpp:seatcushion'),
+        [
+            '   ',
+            ' w ',
+            ' s ' 
+        ],
+        {
+            w:'#minecraft:wool_carpets',
+            s:'#minecraft:wooden_slabs',
+        }
+    );
+    //(工作台)地毯+重压板->斑马线
+    event.shaped(
+        Item.of('jpp:zebracrossing'),
+        [
+            '   ',
+            'hw ',
+            '   ' 
+        ],
+        {
+            w:'#minecraft:wool_carpets',
+            h:'minecraft:heavy_weighted_pressure_plate'
+        }
+    );
+    }
     {//群青冶炼
     //(熔炉)[深层]菱美矿->白松石
     event.smelting('ultramarine:magnesite','ultramarine:magnesite_ore').xp(0.2)
@@ -287,7 +394,5 @@ ServerEvents.recipes(event =>{
                 s:'minecraft:string'
         });
     }
-    {
 
-    }
 });
