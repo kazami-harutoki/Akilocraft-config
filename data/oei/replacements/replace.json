@@ -127,5 +127,12 @@
                 "createaddition:copper_wire"
             ],
         "resultItems": "powergrid:wire"
+    },
+    {
+        "matchItems":
+            [
+                "createaddition:zinc_sheet"
+            ],
+        "resultItems": "powergrid:zinc_sheet"
     }
 ]

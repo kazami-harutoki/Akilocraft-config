@@ -64,7 +64,10 @@ ServerEvents.recipes(event =>{
         {id:"powergrid:cutting/iron_wire_cutting"},//powergrid铁线
         {id:"powergrid:cutting/copper_wire_cutting"},//powergrid铜线
         {id:"jpp:ccb"},//JP混凝土障碍
-        {id:"jpp:bp"}//JP盆栽盆
+        {id:"jpp:bp"},//JP盆栽盆
+        {id:"jpp:zc"},//JP斑马线
+        {id:"jpp:sc"},//JP坐垫
+        {id:"jpp:kt"}//JP暖桌
     ]);
 
     //移除原版牛杂配方,刀切牛肉同时获得森罗物语.牛杂和农夫乐事.牛肉饼
@@ -245,7 +248,7 @@ ServerEvents.recipes(event =>{
     );
     //(工作台)地毯+重压板->斑马线
     event.shaped(
-        Item.of('jpp:zebracrossing'),
+        Item.of('jpp:zebracrossing',6),
         [
             '   ',
             'hw ',
