@@ -59,7 +59,6 @@ ServerEvents.recipes(event =>{
         {id:"kaleidoscope_cookery:chopping_board/sashimi_from_tropical_fish"},
         {id:"kaleidoscope_cookery:chopping_board/sashimi_from_cod"},
         {id:"kaleidoscope_cookery:chopping_board/sashimi_from_salmon"},
-        {id:"powergrid:cutting/copper_wire_cutting"},
         {id:"powergrid:cutting/gold_wire_cutting"},//powergrid金线
         {id:"powergrid:cutting/iron_wire_cutting"},//powergrid铁线
         {id:"powergrid:cutting/copper_wire_cutting"},//powergrid铜线
