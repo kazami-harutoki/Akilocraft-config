@@ -134,5 +134,12 @@
                 "createaddition:zinc_sheet"
             ],
         "resultItems": "powergrid:zinc_sheet"
+    },
+    {
+        "matchItems":
+            [
+                "quark:gunpowder_sack"
+            ],
+        "resultItems": "cratedelight:gunpowder_bag"
     }
 ]
