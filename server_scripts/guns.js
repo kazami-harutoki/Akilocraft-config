@@ -1,3 +1,16 @@
+/*
+重要提醒
+本脚本对子弹的自动化生产里使用了农夫乐事的火药袋('cratedelight:gunpowder_bag')
+无农夫乐事情况下请自行替换为其他物品，如TNT('minecraft:tnt')
+
+机械动力：哨戒动力臂 0.1.0 - 机动机械师枪包
+MC版本1.20.1
+机械动力6.0.8
+KJS 1.6.5
+KJS create 1.3.0
+
+作者 Rain4ky
+*/
 ServerEvents.recipes((event) => {
     const create=event.recipes.create;   //机械动力
 
