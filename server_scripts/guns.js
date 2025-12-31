@@ -80,7 +80,7 @@ ServerEvents.recipes((event) => {
         rbapb,
         [
             create.deploying(rbapb,[rbapb,'create:copper_sheet']),
-            create.deploying(rbapbe,[rbapb,'create:copper_sheet']),
+            create.deploying(rbapb,[rbapb,'create:copper_sheet']),
             create.deploying(rbapb,[rbapb,'minecraft:gunpowder']),
             create.pressing(rbapb,rbapb)
         ]
