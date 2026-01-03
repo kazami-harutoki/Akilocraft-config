@@ -141,5 +141,12 @@
                 "quark:gunpowder_sack"
             ],
         "resultItems": "cratedelight:gunpowder_bag"
+    },
+    {
+        "matchItems":
+            [
+                "kaleidoscope_cookery:fried_egg"
+            ],
+        "resultItems": "farmersdelight:fried_egg"
     }
 ]
